@@ -1,16 +1,30 @@
-﻿namespace Heranca
+﻿using Heranca;
+
+namespace Heranca
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Cachorro meuCachorro = new Cachorro("Rex", "Labrador");
-            meuCachorro.Comer();
-            meuCachorro.Latir();
+            Gerente gerente = new Gerente();
+            gerente.Nome = "Carlos";
+            gerente.Salario = 8000.0;
 
-            Gato meuGato = new Gato("Davi", "Siamês");
-            meuGato.Comer();
-            meuGato.Miado();
+            Desenvolvedor dev = new Desenvolvedor();
+            dev.Nome = "Cesar";
+            dev.Salario = 5000.0;
+
+            Console.WriteLine($"Gerente: {gerente.Nome}");
+            Console.WriteLine($"Salário: R$ {gerente.Salario:F2}");
+            Console.WriteLine($"Bônus Anual: R$ {gerente.CalcularBonusAnual():F2}");
+
+            Console.WriteLine();
+
+            Console.WriteLine($"Desenvolvedor: {dev.Nome}");
+            Console.WriteLine($"Salário: R$ {dev.Salario:F2}");
+            Console.WriteLine($"Bônus Anual: R$ {dev.CalcularBonusAnual():F2}");
+
+
         }
     }
 }
