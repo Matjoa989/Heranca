@@ -1,0 +1,63 @@
+﻿Program.cs
+
+namespace Heranca
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Retangulo R = new Retangulo();
+            R.Altura = 10;
+            R.Largura = 15;
+            Console.WriteLine(R.CalcularArea());
+
+            Circulo C = new Circulo();
+            C.Raio = 5;
+            Console.WriteLine(C.CalcularArea());
+        }
+    }
+}
+
+
+FormaGeometrica.cs
+
+namespace Heranca
+{
+    public abstract class FormaGeometrica
+    {
+        public abstract double CalcularArea();
+    }
+}
+
+
+Retangulo.cs
+
+namespace Heranca
+{
+    public class Retangulo : FormaGeometrica
+    {
+        public double Largura { get; set; }
+        public double Altura { get; set; }
+
+        public override double CalcularArea()
+        {
+            return Largura * Altura;
+        }
+    }
+}
+
+
+Circulo.cs
+
+namespace Heranca
+{
+    public class Circulo : FormaGeometrica
+    {
+        public double Raio { get; set; }
+
+        public override double CalcularArea()
+        {
+            return Math.PI * Raio * Raio;
+        }
+    }
+}

@@ -1,30 +1,17 @@
-﻿using Heranca;
-
-namespace Heranca
+﻿namespace Heranca
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            Gerente gerente = new Gerente();
-            gerente.Nome = "Carlos";
-            gerente.Salario = 8000.0;
+            Retangulo R = new Retangulo();
+            R.Altura = 10;
+            R.Largura = 15;
+            Console.WriteLine(R.CalcularArea());
 
-            Desenvolvedor dev = new Desenvolvedor();
-            dev.Nome = "Cesar";
-            dev.Salario = 5000.0;
-
-            Console.WriteLine($"Gerente: {gerente.Nome}");
-            Console.WriteLine($"Salário: R$ {gerente.Salario:F2}");
-            Console.WriteLine($"Bônus Anual: R$ {gerente.CalcularBonusAnual():F2}");
-
-            Console.WriteLine();
-
-            Console.WriteLine($"Desenvolvedor: {dev.Nome}");
-            Console.WriteLine($"Salário: R$ {dev.Salario:F2}");
-            Console.WriteLine($"Bônus Anual: R$ {dev.CalcularBonusAnual():F2}");
-
-
+            Circulo C = new Circulo();
+            C.Raio = 5;
+            Console.WriteLine(C.CalcularArea());
         }
     }
 }
